@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function addMapping(router, mapping) {
-     for (var url in mapping) {
+    for (var url in mapping) {
         if (url.startsWith('GET ')) {
             var path = url.substring(4);
             router.get(path, mapping[url]);
@@ -25,18 +25,18 @@ function addMapping(router, mapping) {
 }
 
 function addControllers(router, dir) {
-    let files = fs.readdirSync(__dirname + '/' +dir).filter((f) => {
+    let files = fs.readdirSync(__dirname + '/' + dir).filter((f) => {
         return f.endsWith('js');
     }).forEach((f) => {
         let mapping = require(__dirname + '/' + dir + '/' + f);
-        console.log("mapping:",mapping)
+        console.log("mapping:", mapping)
         addMapping(router, mapping)
     })
 }
 
-module.exports = function(dir) {
+module.exports = function (dir) {
     let controllers_dir = dir || 'controllers',
-    router = require('koa-router')();
-    addControllers(router,controllers_dir);
+        router = require('koa-router')();
+    addControllers(router, controllers_dir);
     return router.routes();
 }
