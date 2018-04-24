@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+nav {
+  float: left;
+  font-size: 1em;
+  margin-left: -1.2em;
+  width: 9em;
+  text-align: right;
+}
+nav span {
+  background: red;
+}
+nav a {
+  display: block;
+  padding: 0.7em 1em;
+  color: #000;
+  height: 35px;
+  width: 80px;
+}
