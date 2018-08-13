@@ -1,0 +1,17 @@
+{
+    "name": "ninghao-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "./node_modules/.bin/nodemon index.js",
+        "events": "./node_modules/.bin/nodemon request/index.js",
+        "http": "./node_modules/.bin/nodemon server.js"
+    },
+    "dependencies": {
+        "request": "^2.87.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.3"
+    }
+}
